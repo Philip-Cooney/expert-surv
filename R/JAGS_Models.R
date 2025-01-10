@@ -52,7 +52,7 @@ for (i in 1:n_time_expert){
     for(j in 1:n_experts[i]){
     expert_dens[j,1,i] <-  dnorm(St_expert[i], param_expert[j,3,i],pow(param_expert[j,4,i],-2))
     expert_dens[j,2,i] <-  dt(St_expert[i],    param_expert[j,3,i],pow(param_expert[j,4,i],-2),max(param_expert[j,5,i],1)) 
-    expert_dens[j,3,i] <-  dgamma(St_expert[i], max(param_expert[j,3,i],0.001),param_expert[j,4,i])
+    expert_dens[j,3,i] <-  dgamma((s+St_expert[i]), max(param_expert[j,3,i],0.001),param_expert[j,4,i])
     expert_dens[j,4,i] <-  dlnorm(St_expert[i], param_expert[j,3,i],param_expert[j,4,i])
     expert_dens[j,5,i] <-  dbeta((s+St_expert[i]), max(param_expert[j,3,i], 0.01),param_expert[j,4,i])
     phi_temp[j,i] <- equals(pool_type,1)*(expert_dens[j,param_expert[j,1,i],i]*param_expert[j,2,i])+equals(pool_type,0)*(expert_dens[j,param_expert[j,1,i],i]^param_expert[j,2,i])
@@ -114,7 +114,7 @@ for (i in 1:n_time_expert){
     for(j in 1:n_experts[i]){
     expert_dens[j,1,i] <-  dnorm(St_expert[i], param_expert[j,3,i],pow(param_expert[j,4,i],-2))
     expert_dens[j,2,i] <-  dt(St_expert[i],    param_expert[j,3,i],pow(param_expert[j,4,i],-2),max(param_expert[j,5,i],1)) 
-    expert_dens[j,3,i] <-  dgamma(St_expert[i], max(param_expert[j,3,i],0.001),param_expert[j,4,i])
+    expert_dens[j,3,i] <-  dgamma((s+St_expert[i]), max(param_expert[j,3,i],0.001),param_expert[j,4,i])
     expert_dens[j,4,i] <-  dlnorm(St_expert[i], param_expert[j,3,i],param_expert[j,4,i])
     expert_dens[j,5,i] <-  dbeta((s+St_expert[i]), max(param_expert[j,3,i], 0.01),param_expert[j,4,i])
     phi_temp[j,i] <- equals(pool_type,1)*(expert_dens[j,param_expert[j,1,i],i]*param_expert[j,2,i])+equals(pool_type,0)*(expert_dens[j,param_expert[j,1,i],i]^param_expert[j,2,i])
@@ -179,7 +179,7 @@ for (i in 1:n_time_expert){
     for(j in 1:n_experts[i]){
     expert_dens[j,1,i] <-  dnorm(St_expert[i], param_expert[j,3,i],pow(param_expert[j,4,i],-2))
     expert_dens[j,2,i] <-  dt(St_expert[i],    param_expert[j,3,i],pow(param_expert[j,4,i],-2),max(param_expert[j,5,i],1)) 
-    expert_dens[j,3,i] <-  dgamma(St_expert[i], max(param_expert[j,3,i],0.001),param_expert[j,4,i])
+    expert_dens[j,3,i] <-  dgamma((s+St_expert[i]), max(param_expert[j,3,i],0.001),param_expert[j,4,i])
     expert_dens[j,4,i] <-  dlnorm(St_expert[i], param_expert[j,3,i],param_expert[j,4,i])
     expert_dens[j,5,i] <-  dbeta((s+St_expert[i]), max(param_expert[j,3,i], 0.01),param_expert[j,4,i])
     phi_temp[j,i] <- equals(pool_type,1)*(expert_dens[j,param_expert[j,1,i],i]*param_expert[j,2,i])+equals(pool_type,0)*(expert_dens[j,param_expert[j,1,i],i]^param_expert[j,2,i])
